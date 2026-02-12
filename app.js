@@ -176,11 +176,11 @@ async function saveImage() {
     const btn = event.target;
     const originalText = btn.innerText;
 
-    const instructionText = document.getElementById('story-instruction');
+    const shareMsg = document.getElementById('share-msg');
 
     btn.innerText = "저장 중...";
     btn.disabled = true;
-    if (instructionText) instructionText.style.display = 'none';
+    shareMsg.style.display = 'none';
 
     try {
         const canvas = await html2canvas(area, {
@@ -197,9 +197,9 @@ async function saveImage() {
         console.error("Save failed:", err);
         alert("이미지 저장에 실패했습니다. 직접 캡처를 이용해주세요.");
     } finally {
-        if (instructionText) instructionText.style.display = 'inline';
         btn.innerText = originalText;
         btn.disabled = false;
+        shareMsg.style.display = 'inline';
     }
 }
 
