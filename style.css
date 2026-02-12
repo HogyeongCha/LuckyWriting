@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Outfit:wght@400;700&display=swap');
+
+:root {
+    --primary-bg: #f4f1ea;
+    --deep-blue: #2e3b5e;
+    --muted-red: #8b3a3a;
+    --text-color: #2e3b5e;
+    --text-muted: #5e6b8e;
+    --accent-gold: #c5a059;
+    --success: #4a7c59;
+    --error: #a34b4b;
+    --border-color: rgba(46, 59, 94, 0.2);
+    --font-serif: 'Noto Serif KR', serif;
+    --font-heading: 'Outfit', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: var(--font-serif);
+    background-color: var(--primary-bg);
+    /* Subtle paper texture */
+    background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+#app {
+    max-width: 480px;
+    margin: 0 auto;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+/* Background Resonance Effects */
+.resonance-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.ripple-circle {
+    position: absolute;
+    border: 1px solid var(--deep-blue);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: ripplePulse 10s infinite ease-in-out;
+}
+
+@keyframes ripplePulse {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(0.95);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.05);
+        opacity: 0.6;
+    }
+}
+
+.screen {
+    flex: 1;
+    display: none;
+    padding: 3rem 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.screen.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Classic Paper Style */
+.paper-frame {
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid var(--border-color);
+    padding: 3rem 2rem;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.paper-frame::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 1px solid var(--border-color);
+    pointer-events: none;
+}
+
+/* Typography */
+h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--deep-blue);
+    word-break: keep-all;
+}
+
+.date-large {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    /* Half of 3.5rem */
+    color: var(--muted-red);
+    font-weight: 700;
+    letter-spacing: -2px;
+    margin: 1rem 0;
+    opacity: 0.9;
+}
+
+.hanja-text {
+    font-size: 1.2rem;
+    color: var(--deep-blue);
+    opacity: 0.6;
+    letter-spacing: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Buttons */
+.btn {
+    padding: 1rem 2rem;
+    background: transparent;
+    border: 1px solid var(--deep-blue);
+    color: var(--deep-blue);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    font-family: var(--font-serif);
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.btn-primary {
+    background: var(--deep-blue);
+    color: #fff;
+}
+
+.btn:hover {
+    background: var(--deep-blue);
+    color: #fff;
+}
+
+/* Quiz UI */
+.options-container {
+    display: grid;
+    gap: 0.8rem;
+    width: 100%;
+}
+
+.option-btn {
+    border: 1px solid var(--border-color);
+    text-align: center;
+    padding: 1rem;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.option-btn.correct {
+    background: var(--success);
+    color: #fff;
+    border-color: var(--success);
+}
+
+.option-btn.wrong {
+    background: var(--error);
+    color: #fff;
+    border-color: var(--error);
+    animation: shake 0.4s;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-4px);
+    }
+
+    75% {
+        transform: translateX(4px);
+    }
+}
+
+/* Resonance Gacha */
+.resonance-trigger {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 2rem 0;
+}
+
+.center-dot {
+    width: 40px;
+    height: 40px;
+    background: var(--deep-blue);
+    border-radius: 50%;
+    z-index: 5;
+    transition: transform 0.3s ease;
+}
+
+.wave {
+    position: absolute;
+    border: 1px solid var(--deep-blue);
+    border-radius: 50%;
+    animation: waveExpand 4s infinite linear;
+    opacity: 0;
+}
+
+@keyframes waveExpand {
+    0% {
+        width: 40px;
+        height: 40px;
+        opacity: 0.8;
+    }
+
+    100% {
+        width: 250px;
+        height: 250px;
+        opacity: 0;
+    }
+}
+
+.shaking .center-dot {
+    animation: dotPulse 0.1s infinite;
+}
+
+@keyframes dotPulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Result Card */
+.resonance-card {
+    background: #fff;
+    border: 1px solid var(--deep-blue);
+    padding: 4rem 2rem;
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.resonance-card::after {
+    content: '先鋒 工大';
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 1.2rem;
+    opacity: 0.1;
+    writing-mode: vertical-rl;
+    font-weight: 700;
+}
+
+.fortune-text {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--deep-blue);
+    border-top: 2px solid var(--deep-blue);
+    border-bottom: 2px solid var(--deep-blue);
+    padding: 2.5rem 0;
+    margin: 2rem 0;
+    word-break: keep-all;
+}
+
+/* Result Burst Ripple Effect */
+.burst-ripple {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid var(--deep-blue);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 100;
+    animation: burstWave 2s cubic-bezier(0, 0, 0.2, 1) forwards;
+}
+
+@keyframes burstWave {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0.8;
+        border-width: 4px;
+    }
+
+    100% {
+        width: 200vw;
+        height: 200vw;
+        opacity: 0;
+        border-width: 1px;
+    }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공명 (共鳴) : 한양대학교 공과대학 새내기 새로배움터</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+
+<body>
+    <!-- Resonance Background -->
+    <div class="resonance-container">
+        <div class="ripple-circle" style="width: 400px; height: 400px; top: 20%; left: 80%;"></div>
+        <div class="ripple-circle" style="width: 300px; height: 300px; top: 70%; left: 10%;"></div>
+        <div class="ripple-circle" style="width: 500px; height: 500px; top: 50%; left: 50%;"></div>
+    </div>
+
+    <div id="app">
+        <!-- 1. Landing Screen -->
+        <section id="landing" class="screen active">
+            <div class="paper-frame">
+                <div class="hanja-text">先鋒 工大</div>
+                <h1>한양대학교 2026 공과대학<br>새내기 새로배움터</h1>
+                <div class="date-large">2.28 - 3.2</div>
+                <p style="margin-top: 1rem; opacity: 0.8;">우리의 목소리가 하나로 울려 퍼질 때,<br>진정한 <b>'공명'</b>이 시작됩니다.</p>
+
+                <button class="btn btn-primary" style="margin-top: 2rem;" onclick="startQuiz()">공과대학과 공명하기</button>
+                <div style="font-size: 0.7rem; color: #888; margin-top: 1.5rem; line-height: 1.5;">
+                    한양대학교 제49대 공과대학 학생회 건설준비위원회<br>Powered by @hyu_tech
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Quiz Screen -->
+        <section id="quiz" class="screen">
+            <div id="quiz-container" class="paper-frame" style="text-align: left;">
+                <!-- Quiz content injected by JS -->
+            </div>
+        </section>
+
+        <!-- 3. Gacha Screen -->
+        <section id="gacha" class="screen">
+            <h2>RESISTANCE</h2>
+            <p>퀴즈를 통과하셨습니다.<br>중심을 누르면 당신의 운명과 공명합니다.</p>
+            <div class="resonance-trigger" onclick="openBox()">
+                <div class="wave" style="animation-delay: 0s;"></div>
+                <div class="wave" style="animation-delay: 1s;"></div>
+                <div class="wave" style="animation-delay: 2s;"></div>
+                <div id="lucky-box" class="center-dot"></div>
+            </div>
+        </section>
+
+        <!-- 4. Result Screen -->
+        <section id="result" class="screen">
+            <div class="resonance-card" id="capture-area">
+                <div
+                    style="font-size: 0.7rem; color: var(--deep-blue); margin-bottom: 1rem; letter-spacing: 2px; font-weight: 700;">
+                    2026 HYU ENGINEERING
+                </div>
+                <div id="fortune-display" class="fortune-text">행운의 글귀가 여기에 표시됩니다.</div>
+                <div class="branding-footer">
+                    @hyu_tech 팔로우하고 스토리에 공유하세요!<br>
+                    #한양공대 #새내기새로배움터 #공명
+                </div>
+            </div>
+
+            <div style="margin-top: 1rem; width: 100%;">
+                <p style="font-size: 0.9rem; margin-bottom: 1.5rem;">📸 위 카드를 저장하거나 캡처해서 인스타에 공유해주세요!</p>
+                <button class="btn btn-primary" onclick="saveImage()">이미지 저장하기</button>
+                <button class="btn" style="background: rgba(0,0,0,0.05);"
+                    onclick="window.location.href='https://instagram.com/hyu_tech'">@hyu_tech 팔로우하기</button>
+                <button class="btn"
+                    style="background: rgba(0,0,0,0.02); font-size: 0.8rem; border: none; letter-spacing: 0;"
+                    onclick="restart()">처음으로</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
