@@ -23,7 +23,7 @@
 
 ## 🚀 배포 및 실행
 
-- **Deployment**: [Netlify](https://www.netlify.com/)를 통해 GitHub 저장소와 연동되어 자동 배포되고 있습니다.
+- **Deployment**: [Firebase Hosting](https://firebase.google.com/products/hosting)을 통해 배포되고 있습니다.
 - **로컬 실행 방법**:
   1. 저장소를 클론하거나 소스 코드를 다운로드합니다.
   2. `index.html` 파일을 웹 브라우저(Chrome, Edge 등)로 엽니다.
