@@ -200,7 +200,7 @@ function handleAnswer(idx) {
     } else {
         btns[idx].classList.add('wrong');
         setTimeout(() => {
-            alert("공명이 끊겼습니다. 새로운 문제로 다시 도전하세요!");
+            alert("공명을 지속하기 위해 새로운 문제로 다시 도전하세요.");
             startQuiz();
         }, 500);
     }
