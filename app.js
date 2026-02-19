@@ -270,7 +270,3 @@ async function saveImage() {
 function restart() {
     showScreen('landing');
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Wait for interaction
-});
