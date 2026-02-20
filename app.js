@@ -2,102 +2,122 @@ const questions = [
     {
         q: "한양대학교 공과대학 소속 학과는 총 몇 개일까요? (건축계열 포함)",
         a: ["19개", "20개", "21개", "22개"],
-        correct: 2
+        correct: 2,
+        hint: "공학계열 19개, 건축계열 2개의 학과가 소속되어 있습니다."
     },
     {
         q: "한양대학교 서울캠퍼스가 소재한 자치구는 어디인가요?",
         a: ["성동구", "마포구", "강남구", "용산구"],
-        correct: 0
+        correct: 0,
+        hint: "한양대학교 서울캠퍼스의 주소는 서울특별시 성동구 왕십리로 222입니다."
     },
     {
         q: "한양대학교 공과대학 '새내기 새로배움터'가 진행되는 기간은 언제인가요?",
         a: ["2.25~2.27", "2.26~2.28", "2.27~3.1", "2.28~3.2"],
-        correct: 3
+        correct: 3,
+        hint: "@hyu_tech 인스타그램의 새내기 새로배움터 안내 게시물을 확인해보세요!"
     },
     {
         q: "2026년 기준, 한양대학교 공과대학 학생회는 몇 대 학생회인가요?",
         a: ["47대", "48대", "49대", "50대"],
-        correct: 2
+        correct: 2,
+        hint: "2025년에는 제48대 공과대학 학생회 비상대책위원회로 활동했습니다!"
     },
     {
         q: "한양대학교를 상징하는 동물은 무엇인가요?",
         a: ["사자", "호랑이", "독수리", "용"],
-        correct: 0
+        correct: 0,
+        hint: "한양대학교 공식 마스코트 하이리온의 영어 이름은 'HYLION'입니다."
     },
     {
         q: "한양대학교가 처음 세워진 설립 연도는 언제인가요?",
         a: ["1938년", "1939년", "1940년", "1941년"],
-        correct: 1
+        correct: 1,
+        hint: "한양대학교는 1939년, 동아공과학원으로 시작했습니다."
     },
     {
         q: "한양대학교의 건학 이념은 무엇인가요?",
         a: ["진리와 자유", "실사구시", "홍익인간", "사랑의 실천"],
-        correct: 3
+        correct: 3,
+        hint: "한양대학교에 입학한 모든 학생이 들어야 하는 교양필수 과목의 이름은 '사랑의 실천'입니다."
     },
     {
         q: "학교 캠퍼스와 바로 연결되는 한양대역 출구는 몇 번인가요?",
-        a: ["1번출구", "2번출구", "3번출구", "4번출구"],
-        correct: 1
+        a: ["1번 출구", "2번 출구", "3번 출구", "4번 출구"],
+        correct: 1,
+        hint: "한양대역 2번 출구는 '애지문'으로 불립니다."
     },
     {
         q: "5월에 열리는 한양대학교 공과대학 축제의 이름은 무엇인가요?",
         a: ["라치오스", "고공제", "공학인의 밤", "애국한양응원제"],
-        correct: 2
+        correct: 2,
+        hint: "공학인의 밤은 매년 5월에 열리는 한양대학교 공과대학의 대표 축제입니다."
     },
     {
         q: "한양대학교와 연결된 한양대역은 지하철 몇 호선인가요?",
         a: ["1호선", "2호선", "경의중앙선", "수인분당선"],
-        correct: 1
+        correct: 1,
+        hint: "한양대역과 연결된 지하철역은 뚝섬역, 성수역, 왕십리역, 건대역 등이 있습니다."
     },
     {
         q: "2026학년도 공과대학 새내기 새로배움터의 부제는 무엇인가요?",
         a: ["모두의 외침이 하나되어", "경계를 넘어 울리는 힘", "다시금 하나의 울림으로", "함성을 하나의 파동으로"],
-        correct: 0
+        correct: 0,
+        hint: "'공명'은 모두의 외침이 하나되어 강력해지는 공과대학의 에너지를 의미합니다."
     },
     {
         q: "현재 한양대학교 공과대학 학장님은 어떤 학과 소속의 교수님이신가요?",
         a: ["기계공학부", "융합전자공학부", "건축학부", "신소재공학부"],
-        correct: 2
+        correct: 2,
+        hint: "공과대학장 황희준 교수님의 연구분야는 '건축이론 및 설계'입니다."
     },
     {
         q: "[사자가 군것질할 때] 는 제1공학관 몇 층으로 나가야 하나요?",
         a: ["1층", "2층", "3층", "4층"],
-        correct: 2
+        correct: 2,
+        hint: "제1공학관 3층 중앙에 위치한 통로는 카페 띠아모와 세븐일레븐으로 연결됩니다."
     },
     {
         q: "한양대학교 공과대학의 마스코트 이름은 무엇인가요?",
         a: ["하이리온", "베이비리온", "어덜트리온", "테크리온"],
-        correct: 1
+        correct: 1,
+        hint: "한양대학교 공과대학 공식 마스코트는 실험복을 입은 귀여운 사자 캐릭터입니다."
     },
     {
         q: "다음 중 공과대학 학생회 사업이 아닌 것은 무엇인가요?",
         a: ["냠냠실", "공학인의 밤", "애국한양응원제", "대여사업"],
-        correct: 2
+        correct: 2,
+        hint: "애국한양응원제는 한양대학교 총학생회 주최의 가을 응원제입니다."
     },
     {
         q: "공과대학 학생회실은 어디에 위치하나요?",
         a: ["제1공학관 1층", "정몽구미래자동차연구센터 1층", "공업센터 1층", "제2공학관 1층"],
-        correct: 0
+        correct: 0,
+        hint: "공과대학 학생회실은 제1공학관 110호에 위치하고 있습니다."
     },
     {
         q: "다음중 공과대학의 FM은 무엇인가요?",
         a: ["최강공대", "창조공대", "미래공대", "선봉공대"],
-        correct: 3
+        correct: 3,
+        hint: "공과대학 FM은 '애국한양 선봉공대'입니다."
     },
     {
         q: "다음중 공과대학 학생회 대여사업에서 빌려주지 않는 물품은 무엇인가요?",
         a: ["우산", "충전기", "계산기", "노트북 받침대"],
-        correct: 3
+        correct: 3,
+        hint: "공과대학에서는 학기 중에 우산, 충전기, 계산기를 대여해주는 사업을 운영하고 있습니다."
     },
     {
         q: "2026학년도 공과대학 새내기 새로배움터가 진행되는 지역은 어디인가요?",
         a: ["속초", "강릉", "양양", "원주"],
-        correct: 0
+        correct: 0,
+        hint: "공과대학 새내기 새로배움터 장소는 속초 한화리조트 설악 별관입니다."
     },
     {
         q: "다음 중 제1공학관에 위치한 라운지 이름은 무엇인가요?",
         a: ["남재국 라운지", "이순규 라운지", "이종훈 라운지", "노영백 라운지"],
-        correct: 3
+        correct: 3,
+        hint: "제1공학관에 1층에는 노영백 라운지가 위치해 있습니다."
     }
 ];
 
@@ -130,7 +150,8 @@ let state = {
     screen: 'landing',
     questions: [],
     currentIdx: 0,
-    selectedFortune: ''
+    selectedFortune: '',
+    answerLocked: false
 };
 
 function shuffle(array) {
@@ -157,6 +178,7 @@ function startQuiz() {
 function renderQuestion() {
     const qData = state.questions[state.currentIdx];
     const container = document.getElementById('quiz-container');
+    state.answerLocked = false;
     container.innerHTML = `
         <h2 style="margin-bottom: 2rem;">Q${state.currentIdx + 1}. ${qData.q}</h2>
         <div class="options-container">
@@ -164,6 +186,7 @@ function renderQuestion() {
                 <button class="btn option-btn" onclick="handleAnswer(${i})">${ans}</button>
             `).join('')}
         </div>
+        <div id="hint-message" class="hint-box" aria-live="polite"></div>
         <div style="margin-top: 2rem; text-align: right; opacity: 0.5; font-size: 0.8rem;">
             계속해서 공명을 이어가세요 (${state.currentIdx + 1} / 3)
         </div>
@@ -171,10 +194,16 @@ function renderQuestion() {
 }
 
 function handleAnswer(idx) {
+    if (state.answerLocked) {
+        return;
+    }
+
     const qData = state.questions[state.currentIdx];
     const btns = document.querySelectorAll('.option-btn');
+    const hintBox = document.getElementById('hint-message');
 
     if (idx === qData.correct) {
+        state.answerLocked = true;
         btns[idx].classList.add('correct');
         setTimeout(() => {
             state.currentIdx++;
@@ -198,11 +227,21 @@ function handleAnswer(idx) {
             }
         }, 500);
     } else {
+        state.answerLocked = true;
         btns[idx].classList.add('wrong');
+        btns[qData.correct].classList.add('hint-reveal');
+
+        if (hintBox) {
+            hintBox.classList.add('show');
+            const customHint = typeof qData.hint === 'string' ? qData.hint.trim() : '';
+            hintBox.innerHTML = customHint
+                ? `<strong>힌트:</strong> ${customHint}`
+                : `<strong>힌트:</strong> question 리스트에 hint 문구를 입력해 주세요.`;
+        }
+
         setTimeout(() => {
-            alert("공명을 지속하기 위해 새로운 문제로 다시 도전하세요.");
-            startQuiz();
-        }, 500);
+            state.answerLocked = false;
+        }, 350);
     }
 }
 

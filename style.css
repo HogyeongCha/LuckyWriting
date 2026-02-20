@@ -205,6 +205,28 @@ h1 {
     animation: shake 0.4s;
 }
 
+.option-btn.hint-reveal {
+    background: rgba(197, 160, 89, 0.15);
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 2px rgba(197, 160, 89, 0.3);
+    animation: hintPulse 1s infinite;
+}
+
+.hint-box {
+    display: none;
+    margin-top: 1rem;
+    padding: 0.9rem 1rem;
+    border: 1px dashed var(--accent-gold);
+    background: rgba(197, 160, 89, 0.12);
+    color: var(--text-color);
+    font-size: 0.95rem;
+    line-height: 1.45;
+}
+
+.hint-box.show {
+    display: block;
+}
+
 @keyframes shake {
 
     0%,
@@ -340,5 +362,16 @@ h1 {
         height: 200vw;
         opacity: 0;
         border-width: 1px;
+    }
+}
+
+@keyframes hintPulse {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
     }
 }
