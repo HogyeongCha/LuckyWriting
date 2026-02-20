@@ -205,13 +205,6 @@ h1 {
     animation: shake 0.4s;
 }
 
-.option-btn.hint-reveal {
-    background: rgba(197, 160, 89, 0.15);
-    border-color: var(--accent-gold);
-    box-shadow: 0 0 0 2px rgba(197, 160, 89, 0.3);
-    animation: hintPulse 1s infinite;
-}
-
 .hint-box {
     display: none;
     margin-top: 1rem;
@@ -240,6 +233,15 @@ h1 {
 
     75% {
         transform: translateX(4px);
+    }
+}
+
+@keyframes hintPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 2px rgba(197, 160, 89, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 0 4px rgba(197, 160, 89, 0.5);
     }
 }
 

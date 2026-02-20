@@ -229,7 +229,6 @@ function handleAnswer(idx) {
     } else {
         state.answerLocked = true;
         btns[idx].classList.add('wrong');
-        btns[qData.correct].classList.add('hint-reveal');
 
         if (hintBox) {
             hintBox.classList.add('show');
